@@ -45,13 +45,12 @@ jobs:
       - name: Run tests
         run: |
           flutter test --coverage
-          lcov --remove coverage/lcov.info -o ./coverage/lcov_with_exclusion.info  '**.graphql.dart' '**firebase_options_*.dart' '**/theme/*'
 
       - name: Upload code coverage to GitHub
         uses: actions/upload-artifact@v4
         with:
           name: code-coverage
-          path: coverage/lcov_with_exclusion.info
+          path: coverage/lcov.info
 
   coverage_report:
     name: Generate coverage report
@@ -77,7 +76,7 @@ jobs:
       - name: Report code coverage
         uses: zgosalvez/github-actions-report-lcov@v4.1.22
         with:
-          coverage-files: coverage/lcov_with_exclusion.info
+          coverage-files: coverage/lcov.info
           # 今後テストを充実させていったら閾値設定をする
           #minimum-coverage: 90
           artifact-name: code-coverage-report
