@@ -1,17 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-/// アプリケーションのエントリーポイント
 void main() {
-  runApp(
-    // Riverpodをアプリケーション全体で利用可能にする
-    const ProviderScope(child: MyApp()),
-  );
+  runApp(const ProviderScope(child: MyApp()));
 }
 
 /// アプリケーションのルートWidget
 class MyApp extends StatelessWidget {
-  /// {@macro my_app}
+  /// コンストラクタ
   const MyApp({super.key});
 
   @override
