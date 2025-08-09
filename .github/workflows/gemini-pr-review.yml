@@ -1,10 +1,6 @@
 name: '🧐 Gemini Pull Request Review'
 
 on:
-  pull_request:
-    types:
-      - 'opened'
-      - 'reopened'
   issue_comment:
     types:
       - 'created'
@@ -40,10 +36,6 @@ jobs:
   review-pr:
     if: |-
       github.event_name == 'workflow_dispatch' ||
-      (
-        github.event_name == 'pull_request' &&
-        contains(fromJSON('["OWNER", "MEMBER", "COLLABORATOR"]'), github.event.pull_request.author_association)
-      ) ||
       (
         (
           (
