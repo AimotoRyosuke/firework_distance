@@ -21,5 +21,5 @@ Please also reference the following documents as needed:
     * すべての実装作業が完了した後、以下の項目をチェックします。
     * **静的解析:** `flutter analyze` を実行し、新たなエラー、警告、Lint違反がないことを確認します。
     * **テスト:** `flutter test` を実行し、すべてのテストが成功することを確認します。
-    * **アーキテクCHA遵守:** 実装が `architecture.md` に記載されたレイヤー構造や原則を遵守していることを確認します。
+    * **アーキテクチャ遵守:** 実装が `architecture.md` に記載されたレイヤー構造や原則を遵守していることを確認します。
     * **ドキュメント同期:** 変更内容が `architecture.md` または `requirement.md` に影響を与えていないか最終確認します。もしドキュメントの更新が必要な場合は、速やかに編集します。
