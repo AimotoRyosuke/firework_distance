@@ -11,7 +11,6 @@ void main() {
 
 /// アプリケーションのルートWidget
 class MyApp extends ConsumerWidget {
-  /// コンストラクタ
   const MyApp({super.key});
 
   @override
@@ -28,8 +27,8 @@ class MyApp extends ConsumerWidget {
 
     return MaterialApp(
       title: 'Firework Distance',
-      theme: const MaterialTheme().light(),
-      darkTheme: const MaterialTheme().dark(),
+      theme: MaterialTheme().light(),
+      darkTheme: MaterialTheme().dark(),
       themeMode: themeMode,
       home: const MyHomePage(), // 仮のホーム画面
     );
@@ -38,7 +37,6 @@ class MyApp extends ConsumerWidget {
 
 /// 仮のホーム画面
 class MyHomePage extends StatelessWidget {
-  /// コンストラクタ
   const MyHomePage({super.key});
 
   @override

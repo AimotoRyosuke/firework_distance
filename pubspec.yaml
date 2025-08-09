@@ -23,6 +23,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   freezed: ^3.1.0 # イミュータブルなデータクラスやユニオン型を簡単に作成するためのコードジェネレーター
+  mockito: ^5.4.4
   riverpod_generator: ^2.6.5 # RiverpodのProviderを自動生成するためのコードジェネレーター
   very_good_analysis: ^8.0.0
 

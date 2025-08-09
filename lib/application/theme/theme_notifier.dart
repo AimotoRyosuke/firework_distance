@@ -10,7 +10,6 @@ part 'theme_notifier.g.dart';
 /// アプリケーションのテーマを管理するNotifier
 @Riverpod(keepAlive: true)
 class ThemeNotifier extends _$ThemeNotifier {
-  /// コンストラクタ
   ThemeNotifier();
 
   late final ThemeRepository _repository = ref.read(themeRepositoryProvider);

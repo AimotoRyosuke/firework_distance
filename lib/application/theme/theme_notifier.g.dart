@@ -6,9 +6,11 @@ part of 'theme_notifier.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$themeRepositoryHash() => r'b1a1ea87c5d10576da4fc1f9efc1241b2e160e5b';
+String _$themeRepositoryHash() => r'797a295365ab0d213c7cfc3805b4cb8e1faee537';
 
-/// See also [themeRepository].
+/// ThemeRepositoryのProvider
+///
+/// Copied from [themeRepository].
 @ProviderFor(themeRepository)
 final themeRepositoryProvider = Provider<ThemeRepository>.internal(
   themeRepository,
@@ -24,9 +26,11 @@ final themeRepositoryProvider = Provider<ThemeRepository>.internal(
 @Deprecated('Will be removed in 3.0. Use Ref instead')
 // ignore: unused_element
 typedef ThemeRepositoryRef = ProviderRef<ThemeRepository>;
-String _$themeNotifierHash() => r'd06553c97995f54cee8cceb37dc1130c3362dc5a';
+String _$themeNotifierHash() => r'bf144dafcfb5ae50535a1a14e9ae84e34fb2320a';
 
-/// See also [ThemeNotifier].
+/// アプリケーションのテーマを管理するNotifier
+///
+/// Copied from [ThemeNotifier].
 @ProviderFor(ThemeNotifier)
 final themeNotifierProvider =
     AsyncNotifierProvider<ThemeNotifier, AppThemeMode>.internal(

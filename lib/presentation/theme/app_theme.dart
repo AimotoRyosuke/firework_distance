@@ -2,9 +2,6 @@ import 'package:flutter/material.dart';
 
 /// アプリケーションのテーマを定義するクラス
 class MaterialTheme {
-  /// コンストラクタ
-  const MaterialTheme();
-
   /// ライトテーマのカラースキームを生成する
   static ColorScheme lightScheme() {
     return const ColorScheme(
@@ -122,10 +119,10 @@ class MaterialTheme {
   /// カラースキームからThemeDataを生成する
   /// [colorScheme] 使用するカラースキーム
   ThemeData theme(ColorScheme colorScheme) => ThemeData(
-        useMaterial3: true,
-        brightness: colorScheme.brightness,
-        colorScheme: colorScheme,
-        scaffoldBackgroundColor: colorScheme.surface,
-        canvasColor: colorScheme.surface,
-      );
+    useMaterial3: true,
+    brightness: colorScheme.brightness,
+    colorScheme: colorScheme,
+    scaffoldBackgroundColor: colorScheme.surface,
+    canvasColor: colorScheme.surface,
+  );
 }
