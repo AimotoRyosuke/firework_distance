@@ -40,6 +40,7 @@
     - **StateNotifier / Notifier:** UIの状態を管理し、`Presentation` レイヤーに公開します。`Domain` レイヤーの `Usecase` や `Service` を呼び出し、その結果に基づいて状態を更新します。
     - **Usecase / Service:** アプリケーションのユースケースを実現するロジックを記述します。複数の `Repository` を組み合わせて複雑な処理を行うこともあります。
 - **原則:** UIに依存せず、状態管理とビジネスロジックに特化します。
+- **テーマ管理:** アプリケーションのテーマ（ライト/ダーク）の状態を管理し、デバイスのテーマ設定の取得や、ユーザーによるテーマ変更のロジックを記述します。
 
 ### 3. Domain (ドメイン) レイヤー
 
@@ -47,6 +48,7 @@
 - **構成要素:**
     - **Model:** アプリケーションで扱うデータ構造を定義します（例: `Fireworks`, `Distance`）。
     - **Repository (Abstract):** データへのアクセス方法を定義するインターフェース（抽象クラス）です。具体的な実装は `Infrastructure` レイヤーで行います。
+- **テーマ設定:** アプリケーションのテーマ設定（ライト/ダーク）を保存・取得するためのインターフェースを定義します。
 - **原則:** アプリケーションの他のどのレイヤーにも依存しません。最も安定したレイヤーです。
 
 ### 4. Infrastructure (インフラ) レイヤー
@@ -56,6 +58,7 @@
     - **Repository (Implementation):** `Domain` レイヤーで定義された `Repository` インターフェースの具象クラスです。`DataSource` を利用して具体的なデータ操作を行います。
     - **DataSource:** データベース、API、デバイスのセンサーなど、具体的なデータソースへのアクセスを実装します。
 - **原則:** `Domain` レイヤーのインターフェースを実装し、具体的な技術詳細を隠蔽します。
+- **テーマ設定の実装:** `ThemeRepository`の具体的な実装を提供し、`shared_preferences`などの永続化メカニズムを利用してテーマ設定を保存・読み込みます。
 
 ## 状態管理
 
@@ -82,9 +85,12 @@ lib/
 │   │   └── measurement_view_model.dart (StateNotifier)
 │   └── permission/
 │       └── permission_service.dart
+│   └── theme/
+│       └── theme_notifier.dart (StateNotifier)
 ├── domain/
 │   ├── model/
 │   │   └── distance.dart
+│   │   └── app_theme_mode.dart
 │   ├── repository/
 │   │   ├── permission_repository.dart (abstract)
 │   │   └── fireworks_repository.dart (abstract)
@@ -94,6 +100,7 @@ lib/
     ├── repository/
     │   ├── permission_repository_impl.dart
     │   └── fireworks_repository_impl.dart
+    │   └── theme_repository_impl.dart
     └── datasource/
         ├── camera/
         │   └── camera_datasource.dart

@@ -3,3 +3,9 @@ include: package:very_good_analysis/analysis_options.yaml
 analyzer:
   plugins:
     - riverpod
+
+linter:
+  rules:
+    depend_on_referenced_packages: false # 参照パッケージへの依存を強制しない
+    public_member_api_docs: false # 公開メンバーのAPIドキュメントを強制しない
+    lines_longer_than_80_chars: false # 80文字以上の行を許可する

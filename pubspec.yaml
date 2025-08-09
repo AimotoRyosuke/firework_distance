@@ -15,6 +15,7 @@ dependencies:
   freezed_annotation: ^3.1.0 # Freezed（イミュータブルなクラスを生成するコードジェネレーター）のアノテーションを提供
   hooks_riverpod: ^2.6.1 # RiverpodでReact Hooksライクな機能を使えるようにするパッケージ
   permission_handler: ^12.0.1 # カメラやマイクなどのデバイス権限を扱うためのプラグイン
+  shared_preferences: ^2.2.3 # テーマ設定を永続化するためのパッケージ
 
 dev_dependencies:
   build_runner: ^2.5.4 # コード生成を実行するためのコマンドラインツール
@@ -22,6 +23,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   freezed: ^3.1.0 # イミュータブルなデータクラスやユニオン型を簡単に作成するためのコードジェネレーター
+  mockito: ^5.4.4
   riverpod_generator: ^2.6.5 # RiverpodのProviderを自動生成するためのコードジェネレーター
   very_good_analysis: ^8.0.0
 
