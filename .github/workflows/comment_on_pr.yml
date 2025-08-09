@@ -1,0 +1,25 @@
+name: 'Comment on Pull Request'
+
+on:
+  pull_request:
+    types:
+      - 'opened'
+      - 'reopened'
+
+permissions:
+  pull-requests: write
+
+jobs:
+  add-comment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Add comment to PR'
+        uses: 'actions/github-script@v6'
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: 'Gemini CLIによるレビューをリクエストするには、コメントで `@gemini-cli /review` と入力してください。',
+            })
